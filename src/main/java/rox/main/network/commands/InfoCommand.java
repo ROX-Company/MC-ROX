@@ -12,7 +12,11 @@ public class InfoCommand implements CommandExecutor {
      *   playerSize
      *   maxPlayers
      *   whitelistSize
+     *   motd
      *
+     *
+     *
+     * info§<command>
      *
      *
      *
@@ -22,6 +26,7 @@ public class InfoCommand implements CommandExecutor {
 
     @Override
     public void command(String command, String[] args) {
+
         switch (args[0]) {
             case "playerSize":
                 Main.getInstance().getNetwork().writeMessage("§info§playerSize§" + Bukkit.getOnlinePlayers().size());
@@ -31,6 +36,9 @@ public class InfoCommand implements CommandExecutor {
                 break;
             case "whitelistSize":
                 Main.getInstance().getNetwork().writeMessage("§info§whitelistSize§" + Bukkit.getWhitelistedPlayers().size());
+                break;
+            case "motd":
+                Main.getInstance().getNetwork().writeMessage("§info§motd§" + Bukkit.getMotd());
                 break;
         }
     }
