@@ -43,6 +43,7 @@ public class LocalNetworkTest {
                 objects[2] = writer;
                 objects[3] = UUID.fromString(input[0]);
                 new Thread(this::InputThread).start();
+                client = objects;
             }
         }catch (Exception e){
          e.printStackTrace();
