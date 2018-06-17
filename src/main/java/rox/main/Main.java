@@ -1,5 +1,6 @@
 package rox.main;
 
+import rox.main.debug.LocalNetworkTest;
 import rox.main.network.CommandLoader;
 import rox.main.network.Network;
 import rox.main.network.commands.InfoCommand;
@@ -15,15 +16,22 @@ public class Main extends JavaPlugin {
 
     private CommandLoader commandLoader;
 
+    private boolean debug = true;
+
+    private LocalNetworkTest localNetworkTest;
+
     @Override
     public void onEnable(){
         instance = this;
 
+        if(debug) localNetworkTest = new LocalNetworkTest(8982);
         commandLoader = new CommandLoader();
         loadCommands();
 
         network = new Network(UUID.fromString("95e85d85-7e4d-4ec3-a2d1-4ea7c5c37296"), "1234");
         network.connect();
+
+
     }
 
     @Override

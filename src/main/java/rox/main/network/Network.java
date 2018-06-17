@@ -70,6 +70,9 @@ public class Network {
             if(e instanceof ConnectException){
                 Main.getInstance().getLogger().warning("ROX Server is not enabled. Plugin stopping... ");
                 Main.getInstance().getPluginLoader().disablePlugin(Main.getInstance());
+            }else{
+                Main.getInstance().getLogger().warning("ROX Server is not enabled. Plugin stopping... ");
+                Main.getInstance().getPluginLoader().disablePlugin(Main.getInstance());
             }
         }
     }
