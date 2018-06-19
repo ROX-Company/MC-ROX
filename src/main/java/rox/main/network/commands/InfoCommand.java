@@ -9,10 +9,10 @@ public class InfoCommand implements CommandExecutor {
     /*
      *   Args:
      *   [0]
-     *   playerSize
-     *   maxPlayers
-     *   whitelistSize
-     *   motd
+     *   playerSize Y
+     *   maxPlayers Y
+     *   whitelistSize Y
+     *   motd Y
      *
      *
      *
@@ -39,6 +39,30 @@ public class InfoCommand implements CommandExecutor {
                 break;
             case "motd":
                 Main.getInstance().getNetwork().writeMessage("§info§motd§" + Bukkit.getMotd());
+                break;
+            case "allowEnd":
+                Main.getInstance().getNetwork().writeMessage("§info§allowEnd§" + Bukkit.getAllowEnd());
+                break;
+            case "allowNether":
+                Main.getInstance().getNetwork().writeMessage("§info§allowNether§" + Bukkit.getAllowNether());
+                break;
+            case "allowFlight":
+                Main.getInstance().getNetwork().writeMessage("§info§allowFlight§" + Bukkit.getAllowFlight());
+                break;
+            case "ip":
+                Main.getInstance().getNetwork().writeMessage("§info§ip§" + Bukkit.getIp());
+                break;
+            case "port":
+                Main.getInstance().getNetwork().writeMessage("§info§port§" + Bukkit.getPort());
+                break;
+            case "serverName":
+                Main.getInstance().getNetwork().writeMessage("§info§serverName§" + Bukkit.getServerName());
+                break;
+            case "serverId":
+                Main.getInstance().getNetwork().writeMessage("§info§serverId§" + Bukkit.getServerId());
+                break;
+            case "shutdownMessage":
+                Main.getInstance().getNetwork().writeMessage("§info§shutdownMessage§" + Bukkit.getShutdownMessage());
                 break;
         }
     }

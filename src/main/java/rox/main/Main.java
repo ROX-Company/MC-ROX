@@ -5,6 +5,7 @@ import rox.main.network.CommandLoader;
 import rox.main.network.Network;
 import rox.main.network.commands.InfoCommand;
 import org.bukkit.plugin.java.JavaPlugin;
+import rox.main.network.commands.KickCommand;
 
 import java.util.UUID;
 
@@ -31,6 +32,8 @@ public class Main extends JavaPlugin {
         network = new Network(UUID.fromString("95e85d85-7e4d-4ec3-a2d1-4ea7c5c37296"), "1234");
         network.connect();
 
+        localNetworkTest.sendCommand("info", "");
+
 
     }
 
@@ -49,6 +52,7 @@ public class Main extends JavaPlugin {
 
     public void loadCommands(){
         commandLoader.addCommand("info", new InfoCommand());
+        commandLoader.addCommand("kick", new KickCommand());
     }
 
     public CommandLoader getCommandLoader(){

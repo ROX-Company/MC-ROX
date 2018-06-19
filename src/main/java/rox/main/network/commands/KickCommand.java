@@ -7,13 +7,9 @@ import rox.main.network.CommandExecutor;
 import java.util.UUID;
 
 public class KickCommand implements CommandExecutor {
-
     /*
-
-    kick§<uuid/name>
-
+     *  kick§<uuid/name>
      */
-
     @Override
     public void command(String command, String[] args) {
 
